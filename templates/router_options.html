@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Router Options</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Router Options</h2>
+            <ul>
+                <li><a href="{{ url_for('cli') }}">CLI</a></li>
+                <li><a href="{{ url_for('quick_command_scripts') }}">Quick Command Scripts</a></li>
+                <li><a href="{{ url_for('dhcp_config') }}">DHCP Config</a></li>
+                <li><a href="{{ url_for('ip_route') }}">IP Route</a></li>
+                <li><a href="{{ url_for('acl_config') }}">ACL Config</a></li>
+                <li><a href="{{ url_for('hsrp_config') }}">HSRP Config</a></li>
+                <li><a href="{{ url_for('erase_config') }}">Erase Config</a></li>
+            </ul>            
+        </div>
+        <div class="content">
+            <h1>Welcome to Router Management</h1>
+            <p>Select an option from the menu on the left.</p>
+        </div>
+    </div>
+</body>
+</html>

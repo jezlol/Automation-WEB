@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Router Management Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Welcome to the Router Management Tool</h1>
+
+    <form action="/login_ssh" method="POST">
+        <label for="router_name">Router Name:</label>
+        <input type="text" id="router_name" name="router_name" required>
+        <br>
+        <label for="device_ip">Device IP:</label>
+        <input type="text" id="device_ip" name="device_ip" required>
+        <br>
+        <button type="submit">Login via SSH</button>
+    </form>
+
+    <h2>Devices in the Lab</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for device in devices %}
+            <tr>
+                <td>{{ device['id'] }}</td>
+                <td>{{ device['name'] }}</td>
+                <td>{{ device['type'] }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

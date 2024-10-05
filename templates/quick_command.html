@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Command Scripts</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+</head>
+<body>
+
+    <!-- Sidebar with only the Back button -->
+    <div class="sidebar">
+        <h2>Router Options</h2>
+        <ul>
+            <li><a href="/router_options">Back</a></li>
+            <div class="command-buttons">
+                <button onclick="sendCommand('show_ip_interface_brief')">Show IP Interface Brief</button>
+                <button id="traceroute_button">Traceroute</button>
+                <button onclick="sendCommand('show_running_config')">Show Running Config</button>
+                <button onclick="sendCommand('show_arp_table')">Show ARP Table</button>
+                <button onclick="clearOutput()">Clear Output</button>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h1>Quick Command Scripts</h1>
+        <div class="router-details">
+            <label for="router_name" class="label">Router Name:</label>
+            <span id="router_name">{{ router_name }}</span><br><br>
+        
+            <label for="device_ip" class="label">Device IP:</label>
+            <span id="device_ip">{{ device_ip }}</span><br><br>
+        </div>    
+        <p>Select the command you want to execute:</p>    
+        <!-- Results section -->
+        <h2>Command Output:</h2>
+        <textarea id="command_output" rows="40" cols="80"></textarea>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/quick_commands.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Router Management - CLI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Router Options</h2>
+        <ul>
+            <li><a href="/router_options">Back</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h1>CLI for {{ router_name }}</h1>
+        <p>Device IP: {{ device_ip }}</p>
+        <textarea id="output" rows="10" cols="80" readonly></textarea><br>
+        <input type="text" id="command" placeholder="Enter command here">
+        <button onclick="sendCommand()">Send Command</button><br>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Erase Configuration</title>
+</head>
+<body>
+    <h1>Erase Configuration for {{ router_name }} ({{ device_ip }})</h1>
+
+    <form action="/erase_config" method="POST">
+        <button type="submit">Erase Router Configuration</button>
+    </form>
+
+    <a href="/">Back to Home</a>
+</body>
+</html>
